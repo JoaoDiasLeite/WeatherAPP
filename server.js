@@ -14,15 +14,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
     //app.use(bodyParser.json);
 app.use(express.static(path.join(__dirname, '/')));
 
+
 //Rota
 app.get("/", function(req, res) {
     res.render('form')
 });
 
+
+
 app.post("/temp", function(req, res) {
-
     var requ = unirest("GET", "https://community-open-weather-map.p.rapidapi.com/weather");
-
     requ.query({
         "q": req.body.city,
         "lat": "0",
@@ -33,31 +34,31 @@ app.post("/temp", function(req, res) {
         "units": "metric",
         "mode": "html"
     });
-
     requ.headers({
         "x-rapidapi-key": "733f49e96dmsh69ee05389121cfep136ffbjsn8df7c63fdc22",
         "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
         "useQueryString": true
     });
+    requ.end(function(error, resi) {
 
+        if (error) {
+            throw error;
 
-
-    requ.end(function(resi) {
-        if (resi.error) throw new Error(resi.error);
+        }
 
 
         console.log(resi.body);
         res.send(resi.body);
     });
-
-
-
-
-
-
-
+    process.on("uncaughtException", function(error) {
+        console.log("The exception was caught!")
+        res.send("Cidade não existe!")
+    })
 
 });
+
+
+
 
 
 app.listen(8081, function() {
