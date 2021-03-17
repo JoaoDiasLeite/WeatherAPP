@@ -11,18 +11,19 @@ app.engine('handlebars', handlebars({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
     //Body Parser
 app.use(bodyParser.urlencoded({ extended: false }))
-    //app.use(bodyParser.json);
+app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/')));
 
 
 //Rota
 app.get("/", function(req, res) {
+
     res.render('form')
 });
 
 
 
-app.post("/temp", function(req, res) {
+app.post("/", function(req, res) {
     var requ = unirest("GET", "https://community-open-weather-map.p.rapidapi.com/weather");
     requ.query({
         "q": req.body.city,
@@ -39,25 +40,29 @@ app.post("/temp", function(req, res) {
         "x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
         "useQueryString": true
     });
-    requ.end(function(error, resi) {
+    requ.end(function(response, err) {
 
-        if (error) {
-            throw error;
+        if (response.error) {
+
+            return res.send("Cidade não existe!" + "<br>" + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />')
+
+
+        } else {
+
+            return res.send(response.body + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />');
 
         }
+        // console.log(response.body);
 
-
-        console.log(resi.body);
-        res.send(resi.body);
     });
-    process.on("uncaughtException", function(error) {
-        console.log("The exception was caught!")
-        res.send("Cidade não existe!")
-    })
+
+    /*  process.on("uncaughtException", function(error) {
+         res.status(404);
+         console.log("The exception was caught!")
+         return res.send("Cidade não existe!" + "<br>" + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />')
+     }) */
 
 });
-
-
 
 
 

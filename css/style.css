@@ -24,7 +24,8 @@
         }
         
         .form-input {
-            text-align: center;
+            width: fit-content;
+            ;
             font-size: 20px;
             line-height: 1.2;
             text-align: center;
