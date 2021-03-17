@@ -1,0 +1,62 @@
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+        
+        .form-div {
+            display: block;
+            width: 390px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: transparent;
+        }
+        
+        .form {
+            margin-left: 38%;
+            text-align: center;
+            width: 25%;
+            border-radius: 10px;
+            background-color: rgb(39, 39, 39);
+            padding-bottom: 33px;
+            padding-top: 5px;
+            box-sizing: border-box;
+            position: relative;
+            text-align: center;
+        }
+        
+        .form-input {
+            text-align: center;
+            font-size: 20px;
+            color: #fff;
+            line-height: 1.2;
+            text-align: center;
+            display: block;
+            border-radius: 7px;
+            margin-left: 23%;
+            border-color: transparent;
+        }
+        
+        .form-title {
+            font-size: 25px;
+            color: rgb(39, 39, 39);
+            ;
+            line-height: 1.2;
+            text-align: center;
+            display: block;
+        }
+        
+        .button {
+            border-color: transparent;
+            text-align: center;
+            font-size: 20px;
+            color: #fff;
+            margin-left: 45%;
+            line-height: 1.2;
+            text-align: center;
+            display: block;
+            border-radius: 7px;
+            background: #D90429;
+            background: -webkit-linear-gradient(left, #D90429, #d10b0b, #fa4242)!important;
+            background: -o-linear-gradient(left, #D90429, #d10b0b, #fa4242)!important;
+            background: -moz-linear-gradient(left, #D90429, #d10b0b, #fa4242)!important;
+            background: linear-gradient(left, #D90429, #d10b0b, #fa4242)!important;
+        }
