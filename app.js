@@ -16,8 +16,9 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/')));
 
 
+
 //Rota
-app.get("/", function(req, res) {
+app.get("/", (req, res, next) => {
 
     res.render('form')
 });
@@ -44,7 +45,7 @@ app.post("/", function(req, res) {
 
     axios.request(options).then(function(response) {
         console.log(response.data);
-        return res.send(response.data);
+        return res.json(response.data);
 
         // console.log(response.body);
     }).catch(function(error) {

@@ -1,0 +1,34 @@
+{
+    "name": "rest-api",
+    "version": "1.0.0",
+    "description": "Api ",
+    "main": "server.js",
+    "scripts": {
+        "dev": "nodemon server.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/JoaoDiasLeite/WeatherApp.git"
+    },
+    "author": "João Leite",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/JoaoDiasLeite/WeatherApp/issues"
+    },
+    "homepage": "https://github.com/JoaoDiasLeite/WeatherApp#readme",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "body-parser": "^1.19.0",
+        "config": "^3.3.6",
+        "express": "^4.17.1",
+        "express-handlebars": "^5.2.1",
+        "http": "0.0.1-security",
+        "mongodb": "^2.2.16",
+        "mysql2": "^2.2.5",
+        "path": "^0.12.7",
+        "sequelize": "^6.5.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    }
+}

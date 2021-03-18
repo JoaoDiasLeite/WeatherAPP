@@ -1,165 +1,165 @@
-    .form__group {
-        position: relative;
-        padding: 15px 0 0;
-        margin-top: 10px;
-        width: 50%;
-    }
-    
-    .form__field {
-        text-align: center;
-        font-family: inherit;
-        width: 100%;
-        border: 0;
-        border-bottom: 2px solid #9b9b9b;
-        outline: 0;
-        font-size: 1.3rem;
-        color: rgb(0, 0, 0);
-        padding: 7px 0;
-        background: transparent;
-        transition: border-color 0.2s;
-    }
-    
-    .form__field::placeholder {
-        color: transparent;
-    }
-    
-    .form__field:placeholder-shown~.form__label {
-        font-size: 1.3rem;
-        cursor: text;
-        top: 20px;
-    }
-    
-    .form__label {
-        position: absolute;
-        top: 0;
-        display: block;
-        transition: 0.2s;
-        font-size: 1rem;
-        color: #9b9b9b;
-    }
-    
-    .form__field:focus {
-        padding-bottom: 6px;
-        font-weight: 700;
-        border-width: 3px;
-        border-image: linear-gradient(to right, #11998e, #38ef7d);
-        border-image-slice: 1;
-    }
-    
-    .form__field:focus~.form__label {
-        position: absolute;
-        top: 0;
-        display: block;
-        transition: 0.2s;
-        font-size: 1rem;
-        color: #11998e;
-        font-weight: 700;
-    }
-    /* reset input */
-    
-    .form__field:required,
-    .form__field:invalid {
-        box-shadow: none;
-    }
-    /* demo */
-    
-    body {
-        font-family: "Poppins", sans-serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        font-size: 1.5rem;
-        background-color: #222222;
-    }
-    
-    @import url("https://fonts.googleapis.com/css?family=Rubik:700&display=swap");
-    * {
-        box-sizing: border-box;
-    }
-    
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
-    
-    body {
-        font-family: "Rubik", sans-serif;
-        font-size: 1rem;
-        line-height: 1.5;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        min-height: 100vh;
-        background: #fff;
-    }
-    
-    span {
-        font-weight: 600;
-        text-transform: uppercase;
-    }
-    
-    button {
-        position: relative;
-        cursor: pointer;
-        outline: none;
-        border: 0;
-        text-decoration: none;
-        font-size: inherit;
-        font-family: inherit;
-        justify-content: center;
-        margin-top: 20px;
-        margin-right: auto;
-        margin-left: auto;
-        display: block;
-    }
-    
-    button.learn-more {
-        font-weight: 600;
-        color: #fff3ea;
-        text-transform: uppercase;
-        padding: 1.25em 2em;
-        background: #a32f2f;
-        border: 2px solid #cf6868;
-        border-radius: 0.75em;
-        transform-style: preserve-3d;
-        transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
-    }
-    
-    button.learn-more::before {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: #a32f2f;
-        border-radius: inherit;
-        box-shadow: 0 0 0 2px #ca4f4f, 0 0.625em 0 0 #ec716d;
-        transform: translate3d(0, 0.75em, -1em);
-        transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
-    }
-    
-    button.learn-more:hover {
-        background: #a32f2f;
-        transform: translate(0, 0.25em);
-    }
-    
-    button.learn-more:hover::before {
-        box-shadow: 0 0 0 2px #fc9595, 0 0.5em 0 0 #fcd8d7;
-        transform: translate3d(0, 0.5em, -1em);
-    }
-    
-    button.learn-more:active {
-        background: #ffe9e9;
-        transform: translate(0em, 0.75em);
-    }
-    
-    button.learn-more:active::before {
-        box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
-        transform: translate3d(0, 0, -1em);
-    }
+   .form__group {
+       position: relative;
+       padding: 15px 0 0;
+       margin-top: 10px;
+       width: 50%;
+   }
+   
+   .form__field {
+       text-align: center;
+       font-family: inherit;
+       width: 100%;
+       border: 0;
+       border-bottom: 2px solid #9b9b9b;
+       outline: 0;
+       font-size: 1.3rem;
+       color: rgb(0, 0, 0);
+       padding: 7px 0;
+       background: transparent;
+       transition: border-color 0.2s;
+   }
+   
+   .form__field::placeholder {
+       color: transparent;
+   }
+   
+   .form__field:placeholder-shown~.form__label {
+       font-size: 1.3rem;
+       cursor: text;
+       top: 20px;
+   }
+   
+   .form__label {
+       position: absolute;
+       top: 0;
+       display: block;
+       transition: 0.2s;
+       font-size: 1rem;
+       color: #9b9b9b;
+   }
+   
+   .form__field:focus {
+       padding-bottom: 6px;
+       font-weight: 700;
+       border-width: 3px;
+       border-image: linear-gradient(to right, #11998e, #38ef7d);
+       border-image-slice: 1;
+   }
+   
+   .form__field:focus~.form__label {
+       position: absolute;
+       top: 0;
+       display: block;
+       transition: 0.2s;
+       font-size: 1rem;
+       color: #11998e;
+       font-weight: 700;
+   }
+   /* reset input */
+   
+   .form__field:required,
+   .form__field:invalid {
+       box-shadow: none;
+   }
+   /* demo */
+   
+   body {
+       font-family: "Poppins", sans-serif;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       min-height: 100vh;
+       font-size: 1.5rem;
+       background-color: #222222;
+   }
+   
+   @import url("https://fonts.googleapis.com/css?family=Rubik:700&display=swap");
+   * {
+       box-sizing: border-box;
+   }
+   
+   *::before,
+   *::after {
+       box-sizing: border-box;
+   }
+   
+   body {
+       font-family: "Rubik", sans-serif;
+       font-size: 1rem;
+       line-height: 1.5;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       margin: 0;
+       min-height: 100vh;
+       background: #fff;
+   }
+   
+   span {
+       font-weight: 600;
+       text-transform: uppercase;
+   }
+   
+   button {
+       position: relative;
+       cursor: pointer;
+       outline: none;
+       border: 0;
+       text-decoration: none;
+       font-size: inherit;
+       font-family: inherit;
+       justify-content: center;
+       margin-top: 20px;
+       margin-right: auto;
+       margin-left: auto;
+       display: block;
+   }
+   
+   button.learn-more {
+       font-weight: 600;
+       color: #fff3ea;
+       text-transform: uppercase;
+       padding: 1.25em 2em;
+       background: #a32f2f;
+       border: 2px solid #cf6868;
+       border-radius: 0.75em;
+       transform-style: preserve-3d;
+       transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+   }
+   
+   button.learn-more::before {
+       position: absolute;
+       content: "";
+       width: 100%;
+       height: 100%;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background: #a32f2f;
+       border-radius: inherit;
+       box-shadow: 0 0 0 2px #ca4f4f, 0 0.625em 0 0 #ec716d;
+       transform: translate3d(0, 0.75em, -1em);
+       transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+   }
+   
+   button.learn-more:hover {
+       background: #a32f2f;
+       transform: translate(0, 0.25em);
+   }
+   
+   button.learn-more:hover::before {
+       box-shadow: 0 0 0 2px #fc9595, 0 0.5em 0 0 #fcd8d7;
+       transform: translate3d(0, 0.5em, -1em);
+   }
+   
+   button.learn-more:active {
+       background: #ffe9e9;
+       transform: translate(0em, 0.75em);
+   }
+   
+   button.learn-more:active::before {
+       box-shadow: 0 0 0 2px #b18597, 0 0 #ffe3e2;
+       transform: translate3d(0, 0, -1em);
+   }
