@@ -44,13 +44,13 @@ app.post("/", function(req, res) {
     };
 
     axios.request(options).then(function(response) {
-        console.log(response.data);
+        //console.log(response.data);
         return res.send(response.data + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />');
 
         // console.log(response.body);
     }).catch(function(error) {
         console.error(error);
-        return res.send("Cidade não existe!" + "<br>" + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />')
+        return res.send("Cidade não existe!" + "<br>" + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />');
 
     });
 
