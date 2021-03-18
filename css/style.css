@@ -6,6 +6,7 @@
     }
     
     .form__field {
+        text-align: center;
         font-family: inherit;
         width: 100%;
         border: 0;
