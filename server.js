@@ -44,7 +44,7 @@ app.post("/", function(req, res) {
 
         if (response.error) {
 
-            return res.send("Cidade não existe!" + "<br>" + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />')
+            return res.send("Cidade não existe!" + "<br>" + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />');
 
 
         } else {
