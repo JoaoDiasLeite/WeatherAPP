@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express()
-var unirest = require("unirest");
+    //var unirest = require("unirest");
+var axios = require("axios").default;
 const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const path = require('path');
@@ -24,6 +25,38 @@ app.get("/", function(req, res) {
 
 
 app.post("/", function(req, res) {
+
+    /*********************************************************************  API em Axios  *********************************************************************/
+
+
+    var options = {
+        method: 'GET',
+        url: 'https://community-open-weather-map.p.rapidapi.com/weather',
+        params: {
+            q: req.body.city,
+            units: 'metric',
+            mode: 'html'
+        },
+        headers: {
+            'x-rapidapi-key': '733f49e96dmsh69ee05389121cfep136ffbjsn8df7c63fdc22',
+            'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com'
+        }
+    };
+
+    axios.request(options).then(function(response) {
+        console.log(response.data);
+        return res.send(response.data + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />');
+
+        // console.log(response.body);
+    }).catch(function(error) {
+        console.error(error);
+        return res.send("Cidade não existe!" + "<br>" + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />')
+
+    });
+
+
+    /*********************************************************************  API em Unirest  *********************************************************************/
+    /*
     var requ = unirest("GET", "https://community-open-weather-map.p.rapidapi.com/weather");
     requ.query({
         "q": req.body.city,
@@ -44,7 +77,7 @@ app.post("/", function(req, res) {
 
         if (response.error) {
 
-            return res.send("Cidade não existe!" + "<br>" + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />');
+            return res.send("Cidade não existe!" + "<br>" + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />')
 
 
         } else {
@@ -54,7 +87,8 @@ app.post("/", function(req, res) {
         }
         // console.log(response.body);
 
-    });
+    });*/
+
 
     /*  process.on("uncaughtException", function(error) {
          res.status(404);
