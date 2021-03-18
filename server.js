@@ -34,8 +34,7 @@ app.post("/", function(req, res) {
         url: 'https://community-open-weather-map.p.rapidapi.com/weather',
         params: {
             q: req.body.city,
-            units: 'metric',
-            mode: 'html'
+            units: 'metric'
         },
         headers: {
             'x-rapidapi-key': '733f49e96dmsh69ee05389121cfep136ffbjsn8df7c63fdc22',
@@ -44,8 +43,8 @@ app.post("/", function(req, res) {
     };
 
     axios.request(options).then(function(response) {
-        //console.log(response.data);
-        return res.send(response.data + '<input type="button" value="Go Back From Whence You Came!" onclick="history.back(-1)" />');
+        console.log(response.data);
+        return res.send(response.data);
 
         // console.log(response.body);
     }).catch(function(error) {
