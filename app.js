@@ -101,5 +101,5 @@ app.post("/", function(req, res) {
 
 
 app.listen(8081, function() {
-    console.log("Servidor a funcionar!")
+    console.log("Servidor a funcionar na porta 8081!")
 });
