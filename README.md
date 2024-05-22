@@ -35,7 +35,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <li><a href="#built-with">Built With</a>
+      <a href="#built-with">Built With</a>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
